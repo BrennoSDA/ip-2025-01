@@ -1,0 +1,33 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	var numeros [10]int
+	var pares []int
+	var impares []int
+	somai := 0
+	somap := 0
+
+	fmt.Println("Digite 10 números inteiros:")
+	for i := 0; i < 10; i++ {
+		fmt.Printf("Numero %d:", i+1)
+		fmt.Scan(&numeros[i])
+	}
+
+	for i := 0; i < len(numeros); i++ {
+		if numeros[i]%2 == 0 {
+			pares = append(pares, numeros[i])
+			somap += numeros[i]
+		} else {
+			impares = append(impares, numeros[i])
+			somai += numeros[i]
+		}
+	}
+
+	fmt.Println(pares)
+	fmt.Println(somap)
+	fmt.Println(impares)
+	fmt.Println(len(impares))
+}

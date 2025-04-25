@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	var A [10]int
+
+	fmt.Println("Digite 10 números inteiros:")
+
+	for i := 0; i < 10; i++ {
+		fmt.Printf("Número %d:", i+1)
+		fmt.Scan(&A[i])
+	}
+
+	rep := make(map[int]int)
+
+	for _, num := range A {
+		rep[num]++
+	}
+
+	for num, rep := range rep {
+		if rep > 1 {
+			fmt.Printf("Número %d se repete %d vez(es)\n", num, rep)
+		}
+
+	}
+}
